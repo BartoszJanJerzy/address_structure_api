@@ -51,3 +51,6 @@ docker compose build && docker compose up
   - nie zakładałem (a można) różnicowania języków, w którym podany jest tekst wejściowy
 - wybrałem OpenAI oraz model `gpt-4o`, ponieważ na nich najczęściej pracowałem
   - mozna potencjalnie sparametryzować uruchaianie llm i testowac różnych dostawców i modele
+- napisałem kilka testów jednostkowych (zrozumiałem że jest to wymagane)
+  - oczywiście mozna mocniej otestować aplikację, uzyć większej ilości funkcjonalności pakietu `pytest`
+  - uznałem że na cele ćwiczeniowe to co jest wystarczy   
