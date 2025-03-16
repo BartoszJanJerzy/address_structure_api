@@ -30,7 +30,15 @@ class EnumStatus(str, Enum):
 
 class RedisRecord(BaseModel):
     status: EnumStatus
-    data: AddressSchema | None = None
+    data: AddressSchema = AddressSchema(
+        adr="",
+        name="",
+        street="",
+        house="",
+        postal_code="",
+        city="",
+        voivodeship="",
+    )
 
 
 class ResultResponse(BaseModel):
