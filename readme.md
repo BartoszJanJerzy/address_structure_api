@@ -39,3 +39,15 @@ docker compose build && docker compose up
 docker compose down
 docker compose build && docker compose up
 ```
+
+## Ograniczenia, wnioski, itd
+- aplikacja jest dosyc mocno rozbudowana jak na tak prosta funkcjonalność (redis, celery, fastapi)
+  - chciałem mieć pewność, że wszystkie wymagania są spełnione
+- domyślnie ustawiłem ilość wątków w `Celery` na min 10 (max 100) tak aby spełnić wymaganie dot. min 10ciu równoczesnych requestów
+  - oczywiście maszyna musi obsłuzyć 10 workerów
+- logika strukturyzacji adresu jest tutaj dosyć prosta
+  - nie zakładałem (a można) żadnego etapu analizy podanego tekstu w inpucie
+  - nie zakładałem (a można) obsługi przypadków, gdy podany tekst nie ma informacji adresowych lub ma sporo szumu (np. niepotrzebnych informacji)
+  - nie zakładałem (a można) różnicowania języków, w którym podany jest tekst wejściowy
+- wybrałem OpenAI oraz model `gpt-4o`, ponieważ na nich najczęściej pracowałem
+  - mozna potencjalnie sparametryzować uruchaianie llm i testowac różnych dostawców i modele
