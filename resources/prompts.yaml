@@ -1,0 +1,8 @@
+json_parser_template: "
+Reformat this text to the structure. 
+
+Instructions:
+{format_instructions}
+
+The text is: {text}
+"

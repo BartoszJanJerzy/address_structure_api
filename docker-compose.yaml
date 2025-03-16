@@ -1,0 +1,31 @@
+services:
+  redis:
+    build:
+      context: .
+      dockerfile: src/redis/Dockerfile
+    container_name: redis
+    image: redis:0.0.1
+    ports:
+      - "6379:6379"
+  backend:
+    build:
+      context: .
+      dockerfile: src/backend/Dockerfile
+    container_name: backend
+    image: backend:0.0.1
+    depends_on:
+      - redis
+    environment:
+      - OPENAI_API_KEY=super-api-key
+      - OPENAI_API_ORGANIZATION=super-organization
+  api:
+    build:
+      context: .
+      dockerfile: src/api/Dockerfile
+    container_name: api
+    image: api:0.0.1
+    ports:
+      - "1111:1111"
+    depends_on:
+      - redis
+      - backend

@@ -1,0 +1,7 @@
+pydantic
+pyyaml
+langchain
+langchain-openai
+redis
+celery
+pytest

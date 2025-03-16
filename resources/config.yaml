@@ -1,0 +1,8 @@
+redis_host: "redis"
+redis_port: 6379
+
+openai_model: "gpt-4o"
+
+celery_app: "CeleryBackend"
+celery_broker: "redis://redis:6379/0"
+celery_backend: "redis://redis:6379/0"
